@@ -9,11 +9,9 @@ let currentFont;
 let currentTextWidth;
 let currentLogoStyle;
 function preload() {
-  let font = loadFont("../fonts/RubikMonoOne-Regular.otf");
+  let font = loadFont("/assets/RubikMonoOne-Regular.otf");
   fonts.push(font);
-  font = loadFont("../fonts/ShareTechMono-Regular.otf");
-  fonts.push(font);
-  font = loadFont("./assets/BobbiTheHippie.otf");
+  font = loadFont("/assets/ShareTechMono-Regular.otf");
   fonts.push(font);
 }
 function setup() {
@@ -22,6 +20,7 @@ function setup() {
   textFont(fonts[0]);
   textStyle(BOLD);
   noLoop();
+  currentFont = fonts[0];
 }
 function draw() {
   calculateTextSize();
@@ -34,33 +33,21 @@ function draw() {
 function pickStyle() {
   switch (currentLogoStyle) {
     case "crunch":
-      textFont(fonts[0]);
-      currentFont = fonts[0];
       pickCrunch(PosX, PosY, textInput);
       break;
     case "spiky":
-      textFont(fonts[0]);
-      currentFont = fonts[0];
       pickSpiky(PosX, PosY, textInput);
       break;
     case "chaos":
-      textFont(fonts[0]);
-      currentFont = fonts[0];
       pickChaos(PosX, PosY, textInput);
       break;
     case "sticky":
-      textFont(fonts[0]);
-      currentFont = fonts[0];
       pickSticky(PosX, PosY, textInput);
       break;
     case "grain":
-      textFont(fonts[0]);
-      currentFont = fonts[0];
       pickGrain(PosX, PosY, textInput);
       break;
     default:
-      textFont(fonts[0]);
-      currentFont = fonts[0];
       pickChaos(PosX, PosY, textInput);
   }
 }
