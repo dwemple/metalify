@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://www.dropbox.com/static/api/2/dropins.js"
+      id="dropboxjs"
+      data-app-key="njk7b670n9drt84"
+    ></script>
+    <script src="input.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/dropbox/dist/Dropbox-sdk.min.js"
+    ></script>
+    <script src="image_upload.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <div class="overlay">
+      <img src="assets/grain.png" />
+    </div>
+    <div class="input">
+      <input
+        id="user_input"
+        onchange="textChanged()"
+        type="text"
+        maxlength="13"
+      />
+      <p style="color: grey; margin: 5px 0 0">Max 13 characters!</p>
+      <p style="color: white; margin: 5px 0 25px">Press enter to submit</p>
+      <div class="buttons">
+        <button onclick="changeStyle(`crunch`)">Crunch</button>
+        <button onclick="changeStyle(`sticky`)">Sticky</button>
+        <button onclick="changeStyle(`spiky`)">Spiky</button>
+        <button onclick="changeStyle(`chaos`)">Chaos</button>
+      </div>
+      <button onclick="changeStyle('random')">Suprise me!</button>
+    </div>
+    <div class="left-buttons">
+      <h2>These might take a while to load!</h2>
+      <h3>Use at your own risk...</h3>
+      <button onclick="changeStyle(`grain`)">Disentegrate</button>
+    </div>
+    <div class="sketch">
+      <div class="sketch-border">
+        <main></main>
+      </div>
+    </div>
+    <div class="qr">
+      <h3>QR code for download!</h3>
+      <img id="qr-img" src="/images/temp.png" />
+      <div class="preview">
+        <img id="img-preview" src="/images/temp_preview.png" />
+      </div>
+      <button onclick="showQRcode()">Get QR code</button>
+    </div>
+    <script src="sketch.js"></script>
+    <script src="crunch.js"></script>
+    <script src="chaos.js"></script>
+    <script src="grain.js"></script>
+    <script src="spiky.js"></script>
+  </body>
+</html>

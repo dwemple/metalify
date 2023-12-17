@@ -1,0 +1,3 @@
+/images/*
+!/images/temp*
+access_token.js
