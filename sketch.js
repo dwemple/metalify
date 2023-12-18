@@ -41,9 +41,6 @@ function pickStyle() {
     case "chaos":
       pickChaos(PosX, PosY, textInput);
       break;
-    case "sticky":
-      pickSticky(PosX, PosY, textInput);
-      break;
     case "grain":
       pickGrain(PosX, PosY, textInput);
       break;
@@ -53,7 +50,7 @@ function pickStyle() {
 }
 function changeStyle(style) {
   if (style == "random") {
-    chooseRandom = random(["crunch", "spiky", "chaos", "sticky"]);
+    chooseRandom = random(["crunch", "spiky", "chaos"]);
     if (currentLogoStyle == chooseRandom) changeStyle(style);
     else {
       currentLogoStyle = chooseRandom;
